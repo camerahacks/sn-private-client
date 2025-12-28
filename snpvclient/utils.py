@@ -12,7 +12,7 @@ def getMD5(data: str | bytes) -> str:
     elif isinstance(data, bytes):
         return md5(data).hexdigest()
     else:
-        raise TypeError("Data must be string")
+        raise TypeError("Data must be string or bytes")
 
 def getSHA256(string: str) -> str:
     """

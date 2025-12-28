@@ -27,3 +27,18 @@ Upload a file
 ```python
 upload = snclient.upload(file_path, directoryId)
 ```
+
+Delete a file
+```python
+delete = snclient.delete('directoryId', ['document id', 'document id'])
+```
+
+Get PNG url of all pages of a .note file.
+```python
+png = snclient.getPNG('document id')
+```
+
+Get PDF url of a .note file. Pass specific page numbers as a list or a blank list for all pages.
+```python
+pdf = snclient.getPDF('document id', ['pageNo'])
+```

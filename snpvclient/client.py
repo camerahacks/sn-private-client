@@ -100,6 +100,41 @@ class SNPClient:
 
         return self.post('list', json=payload, headers=headers)
     
+    def getPNG(self, id: str) -> Any:
+        """
+        Get PNG image from .note file.
+        """
+
+        payload = {
+            "id": id
+        }
+
+        headers = {
+            "x-access-token": self._token,
+        }
+
+        png_response = self.post('png', json=payload, headers=headers)
+
+        return png_response.get('pngPageVOList', [])
+
+    def getPDF(self, id: str, pageList: list = []) -> Any:
+        """
+        Get PDF file from .note file.
+        """
+
+        payload = {
+            "id": id,
+            "pageNoList": pageList
+        }
+
+        headers = {
+            "x-access-token": self._token,
+        }
+
+        pdf_response = self.post('pdf', json=payload, headers=headers)
+
+        return pdf_response.get('url', '')
+
     def upload(self, file_path: str, dir: str) -> Any:
         """
         Upload a file to Supernote Private Cloud Instance.
@@ -166,3 +201,18 @@ class SNPClient:
             return 0
         else:
             return 1
+    def delete(self, directory_id: str, ids: list) -> Any:
+        """
+        Delete a list of files from Supernote Private Cloud Instance.
+        """
+
+        payload = {
+            "directoryId": directory_id,
+            "idList": ids
+        }
+        
+        headers = {
+            "x-access-token": self._token,
+        }
+
+        return self.post('delete', json=payload, headers=headers)
