@@ -3,7 +3,7 @@ endpoints = {
     'code': '/api/official/user/query/random/code',
     'login': '/api/official/user/account/login/new',
     'list': '/api/file/list/query',
-    'get': '/api/file/download/url',
+    'download': '/api/file/download/url',
     'pdf': '/api/file/note/to/pdf',
     'pdfmark': '/api/file/pdfwithmark/to/pdf',
     'png': '/api/file/note/to/png',

@@ -116,6 +116,25 @@ class SNPClient:
         png_response = self.post('png', json=payload, headers=headers)
 
         return png_response.get('pngPageVOList', [])
+    
+    def download(self, id: str, type: int = 0) -> Any:
+        """
+        Get download URL for a file from Supernote Private Cloud Instance.
+        Downloads the unpprocessed file.
+        """
+
+        payload = {
+            "id": id,
+            "type": type
+        }
+
+        headers = {
+            "x-access-token": self._token,
+        }
+
+        download_response = self.post('download', json=payload, headers=headers)
+
+        return download_response.get('url', '')
 
     def getPDF(self, id: str, pageList: list = []) -> Any:
         """
