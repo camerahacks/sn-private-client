@@ -5,6 +5,7 @@ import requests as rq
 
 from .api import endpoints
 from .utils import getSHA256, getMD5
+from .actions import *
 
 
 class SNPClient:

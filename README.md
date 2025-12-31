@@ -12,10 +12,10 @@ pip install snpvclient
 
 ## Usage and Examples
 
-Setup the client anc connect to private cloud.
+Setup the client and connect to private cloud.
 ```python
-import snpvclient
-snclient = snpvclient.SNPClient('https://supernote.example.com')
+import snpvclient as sn
+snclient = sn.SNPClient('https://supernote.example.com')
 snclient.login('email@example.com', 'password')
 ```
 
@@ -47,4 +47,12 @@ png = snclient.getPNG('document id')
 Get PDF url of a .note file. Pass specific page numbers as a list or a blank list for all pages.
 ```python
 pdf = snclient.getPDF('document id', ['pageNo'])
+```
+
+## Actions
+
+List all folders and files
+
+```python
+sn.actions.list_folder(snclient)
 ```
