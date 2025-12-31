@@ -220,6 +220,7 @@ class SNPClient:
             return 0
         else:
             return 1
+    
     def delete(self, directory_id: str, ids: list) -> Any:
         """
         Delete a list of files from Supernote Private Cloud Instance.

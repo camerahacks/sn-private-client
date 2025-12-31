@@ -4,6 +4,12 @@ A Python client for connecting to a Supernote Private Cloud Instance. Useful for
 
 Requires Python 3.10+
 
+## Install
+
+```
+pip install snpvclient
+```
+
 ## Usage and Examples
 
 Setup the client anc connect to private cloud.
