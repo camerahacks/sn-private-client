@@ -1,0 +1,5 @@
+graft src
+graft tests
+
+global-exclude .env
+global-exclude test.py
